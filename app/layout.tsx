@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
+import NavBar from "./ui/NavBar/NavBar";
+import Sidebar from "./ui/SideBar/SideBar";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import "./globals.css";
+import "./variables.css";
+import styles from "./layout.module.css"
+import KantImage from "@/app/images/Kant-image.jpg";
+
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +35,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <div className={styles["App"]}>
+          <div className={styles["side-cont"]}>
+            <NavBar />
+            <Image
+              className={styles["kant-image"]}
+              src={KantImage}
+              alt="Immanuel Kant"
+              title="Immanuel Kant"
+            />
+            <Sidebar />
+          </div>
+          <div className={styles["app-inner-cont"]}>
+            <NavBar small />
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

@@ -1,0 +1,42 @@
+.App {
+    display: flex;
+    max-width: min(94vw, 1200px);
+    margin: min(3vw, 40px);
+}
+
+.side-cont {
+    width: 25%;
+    min-width: 190px;
+    max-width: 250px;
+}
+
+.kant-image {
+    max-width: 100%;
+    border-radius: 5px;
+    height: auto;
+}
+
+.app-inner-cont {
+    width: 75%;
+}
+
+@media screen and (max-width: 960px) {
+    .App {
+        margin: min(3vw, 20px);
+    }
+
+    .app-inner-cont {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .App {
+        max-width: 92vw;
+        margin: 4vw;
+    }
+
+    .side-cont {
+        display: none;
+    }
+}

@@ -1,0 +1,42 @@
+.NavBar {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.home-icon, .account-icon {
+    margin: 0 10px;
+    color: var(--text-on-primary-color);
+    font-size: 1.1rem;
+    transition: 0.2s linear;
+}
+
+.home-icon:hover, .account-icon:hover {
+    font-size: 1.25rem;
+    transition: 0.3s linear;
+}
+
+.NavBar.small, .kant-image.small {
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .nav-cont {
+        height: 125px;
+    }
+
+    .NavBar.small {
+        display: inline-block;
+        width: calc(100% - (min(35vw, 80px) + 2.5vw));
+        margin-bottom: 15px;
+    }
+
+    .kant-image.small {
+        display: block;
+        max-width: min(35vw, 80px);
+        float: right;
+        border-radius: 5px;
+        height: auto;
+    }
+}
