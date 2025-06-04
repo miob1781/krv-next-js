@@ -90,7 +90,7 @@ export interface AuthContextTypes {
     /** sets the array with all notes */
     setNotes: Dispatch<SetStateAction<LessonNotes>>
     /** function to store authentication token */
-    storeToken: () => void
+    storeToken: (token: string) => void
     /** function to authenticate user */
     authenticateUser: () => void
     /** function to log out user */

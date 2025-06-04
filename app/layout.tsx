@@ -9,6 +9,7 @@ import "./globals.css";
 import "./variables.css";
 import styles from "./layout.module.css"
 import KantImage from "@/app/images/Kant-image.jpg";
+import { AuthProviderWrapper } from "./context/auth.context";
 
 config.autoAddCss = false;
 
@@ -35,22 +36,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className={styles["App"]}>
-          <div className={styles["side-cont"]}>
-            <NavBar />
-            <Image
-              className={styles["kant-image"]}
-              src={KantImage}
-              alt="Immanuel Kant"
-              title="Immanuel Kant"
-            />
-            <Sidebar />
+        <AuthProviderWrapper>
+          <div className={styles["App"]}>
+            <div className={styles["side-cont"]}>
+              <NavBar />
+              <Image
+                className={styles["kant-image"]}
+                src={KantImage}
+                alt="Immanuel Kant"
+                title="Immanuel Kant"
+              />
+              <Sidebar />
+            </div>
+            <div className={styles["app-inner-cont"]}>
+              <NavBar small />
+              {children}
+            </div>
           </div>
-          <div className={styles["app-inner-cont"]}>
-            <NavBar small />
-            {children}
-          </div>
-        </div>
+        </AuthProviderWrapper>
       </body>
     </html>
   );

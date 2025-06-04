@@ -1,0 +1,12 @@
+.NoteForm button {
+    margin-right: 5px;
+    padding: 4px;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 720px) {
+    .NoteForm {
+        margin-left: 4vw;
+        margin-bottom: 20px;
+    }
+}

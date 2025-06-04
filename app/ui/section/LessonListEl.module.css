@@ -1,0 +1,45 @@
+.page-number-cont {
+    grid-column: 1;
+    text-align: right;
+}
+
+.page-number {
+    font-size: 0.9rem;
+}
+
+.lesson-list-text {
+    grid-column: 2;
+    text-align: justify;
+}
+
+.lesson-list-text.lesson-question {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background-color: var(--accent-color);
+    box-shadow: 4px 6px 4px gray;
+}
+
+.lesson-list-text.lesson-question p {
+    margin-bottom: 0;
+}
+
+.small-page-number-cont {
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .page-number-cont {
+        display: none;
+    }
+    
+    .small-page-number-cont {
+        display: inline;
+        font-weight: bold;
+    }
+
+    .lesson-list-text {
+        margin: 10px 0;
+    }
+}
+    
