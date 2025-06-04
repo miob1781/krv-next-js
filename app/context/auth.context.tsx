@@ -98,6 +98,7 @@ export function AuthProviderWrapper({ children }: PropsWithChildren) {
         <AuthContext.Provider value={{
             isLoggedIn,
             isLoading,
+            setIsLoading,
             userId,
             username,
             lessonIds,

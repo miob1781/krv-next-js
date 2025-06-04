@@ -1,0 +1,108 @@
+.Account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: min(84vw, 80%, 700px);
+    margin: 50px;
+    margin-left: 90px;
+    padding: 40px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary-color);
+}
+
+.Account p {
+    text-align: justify;
+}
+
+.form-grid {
+    display: grid;
+    max-width: 300px;
+    grid-template-columns: 150px 120px;
+    gap: 10px 20px;
+    margin: 25px 0;
+}
+
+.form-grid label {
+    grid-column: 1;
+    hyphens: none;
+}
+
+.form-grid input {
+    grid-column: 2;
+    padding: 5px;
+    font-family: var(--notes-font);
+    font-size: 0.8rem;
+}
+
+.Account .button-cont {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.Account button {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    background-color: var(--primary-color-dark);
+    transition: 0.2s linear;
+}
+
+.Account button:hover {
+    background-color: var(--primary-color-light);
+    transition: 0.4s ease-out;
+}
+
+.Account button:active {
+    background-color: var(--primary-color-very-dark);
+    transition: 0.2s ease-in;
+}
+
+.Account button.delete {
+    margin-top: 10px;
+    background-color: red;
+}
+
+.Account button.delete:hover {
+    background-color: rgb(240, 129, 85);
+}
+
+.Account button.delete:active {
+    background-color: firebrick;
+}
+
+.error-message {
+    padding: 7px;
+    margin-bottom: 25px;
+    border: 3px red solid;
+    border-radius: 5px;
+}
+
+.success-text-cont p {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 720px) {
+    .Account {
+        max-width: 100%;
+        padding: 6vw;
+        margin: 0;
+    }
+
+    .form-grid {
+        max-width: 84vw;
+        grid-template-columns: 35vw 30vw;
+        gap: 3vw;
+    }
+
+    .Account .button-cont {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .Account button {
+        margin-bottom: 15px;
+    }
+}

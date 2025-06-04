@@ -1,6 +1,6 @@
 "use client"
 import { JSX, useContext, useMemo } from "react"
-import Link from "next/link"
+import { redirect } from "next/navigation"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from "@/app/context/auth.context"
@@ -47,14 +47,14 @@ export default function IntroTocEl({ lessonId, numberOfSection, title }: Props) 
     const checkmark: JSX.Element = <FontAwesomeIcon className={styles["intro-checkmark"]} icon={faCircleCheck} />
 
     return (
-        <p className={lessonDisabled ? `${styles["intro-toc-inner-cont"]} ${styles["disabled"]}` : styles["intro-toc-inner-cont"]}>
+        <div className={lessonDisabled ? `${styles["intro-toc-inner-cont"]} ${styles["disabled"]}` : styles["intro-toc-inner-cont"]}>
             {numberOfSection && <span
                 className={styles["intro-toc-num"]}
             >{`${numberOfSection}. `}</span>}
-            <Link
-                href={!lessonDisabled ? `/section-${lessonId}` : ""}
+            <p
+                onClick={() => !lessonDisabled && redirect(`/section-${lessonId}`)}
                 className={styles["intro-toc-title"]}
-            >{title}{lessonDone && checkmark}</Link>
-        </p>
+            >{title}{lessonDone && checkmark}</p>
+        </div>
     )
 }

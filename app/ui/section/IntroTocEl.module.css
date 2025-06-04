@@ -1,6 +1,7 @@
 .intro-toc-inner-cont {
     display: flex;
     padding: 15px 20px;
+    padding-bottom: 0;
     margin-bottom: 7px;
     border-radius: 5px;
     background-color: var(--primary-color);
@@ -42,6 +43,7 @@
 .intro-toc-title:hover {
     text-decoration: underline;
     text-decoration-color: currentColor;
+    cursor: pointer;
 }
 
 .intro-checkmark {

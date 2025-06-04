@@ -1,4 +1,4 @@
-import { EventHandler, SetStateAction } from "react"
+import { Dispatch, EventHandler, SetStateAction } from "react"
 
 /** metadata of lesson */
 export interface LessonData {
@@ -77,6 +77,8 @@ export interface AuthContextTypes {
     isLoggedIn: boolean
     /** true if user data are being loaded */
     isLoading: boolean
+    /** set isLoading */
+    setIsLoading: Dispatch<SetStateAction<boolean>>
     /** user id */
     userId: string
     /** username */
@@ -84,11 +86,11 @@ export interface AuthContextTypes {
     /** ids of completed lessons */
     lessonIds: string[]
     /** function to set state of lesson ids */
-    setLessonIds: Dispatch<SetStateAction<string>>
+    setLessonIds: Dispatch<SetStateAction<string[]>>
     /** array with all notes */
     notes: LessonNotes[]
     /** sets the array with all notes */
-    setNotes: Dispatch<SetStateAction<LessonNotes>>
+    setNotes: Dispatch<SetStateAction<LessonNotes[]>>
     /** function to store authentication token */
     storeToken: (token: string) => void
     /** function to authenticate user */
