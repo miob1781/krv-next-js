@@ -1,4 +1,3 @@
-"use client"
 import Introduction from "@/app/ui/section/Introduction";
 import { getSectionData } from "@/app/utils/helpers";
 

@@ -1,4 +1,3 @@
-"use client"
 import Lesson from "@/app/ui/section/Lesson";
 import LessonListEl from "@/app/ui/section/LessonListEl";
 import { quiz_1_1 } from "@/app/quizzes/quiz-1-1";
