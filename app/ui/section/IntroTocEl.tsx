@@ -1,11 +1,11 @@
 "use client"
 import { JSX, useContext, useMemo } from "react"
-import { redirect } from "next/navigation"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from "@/app/context/auth.context"
 import { AuthContextTypes } from "@/app/types"
 import styles from "./IntroTocEl.module.css"
+import Link from "next/link"
 
 interface Props {
     lessonId: string
@@ -51,10 +51,12 @@ export default function IntroTocEl({ lessonId, numberOfSection, title }: Props) 
             {numberOfSection && <span
                 className={styles["intro-toc-num"]}
             >{`${numberOfSection}. `}</span>}
-            <p
-                onClick={() => !lessonDisabled && redirect(`/section-${lessonId}`)}
+            <Link
+                onNavigate={(e) => lessonDisabled && e.preventDefault()}
+                href={`/section-${lessonId}`}
                 className={styles["intro-toc-title"]}
-            >{title}{lessonDone && checkmark}</p>
+                prefetch
+            >{title}{lessonDone && checkmark}</Link>
         </div>
     )
 }

@@ -12,14 +12,16 @@ interface Props {
 
 /** displays lesson, content is ordered as a grid with paragraphs and page numbers, texts and notes */
 export default function Lesson({ children, lessonData, quiz }: PropsWithChildren<Props>) {
-    const { loadNotes } = useContext(AuthContext) as AuthContextTypes
+    const { loadNotes, notes } = useContext(AuthContext) as AuthContextTypes
 
     const [quizOn, setQuizOn] = useState(false)
 
     // loads notes after mount
     useEffect(() => {
-        loadNotes(lessonData.lessonId)
-    }, [lessonData.lessonId, loadNotes])
+        if (notes.length === 0) {
+            loadNotes(lessonData.lessonId)
+        }
+    }, [lessonData.lessonId, loadNotes, notes.length])
 
     /** lesson, displayed if quizOn is false */
     const lesson = (

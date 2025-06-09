@@ -36,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AuthProviderWrapper>
           <div className={styles["App"]}>
             <div className={styles["side-cont"]}>
               <NavBar />
@@ -45,15 +44,17 @@ export default function RootLayout({
                 src={KantImage}
                 alt="Immanuel Kant"
                 title="Immanuel Kant"
-              />
+                priority
+                />
               <Sidebar />
             </div>
             <div className={styles["app-inner-cont"]}>
               <NavBar small />
-              {children}
+              <AuthProviderWrapper>
+                {children}
+              </AuthProviderWrapper>
             </div>
           </div>
-        </AuthProviderWrapper>
       </body>
     </html>
   );

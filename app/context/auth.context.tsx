@@ -91,8 +91,10 @@ export function AuthProviderWrapper({ children }: PropsWithChildren) {
 
     // authenticates user when app mounts
     useEffect(() => {
-        authenticateUser()
-    }, [authenticateUser])
+        if (!isLoggedIn) {
+            authenticateUser()
+        }
+    }, [authenticateUser, isLoggedIn])
 
     return (
         <AuthContext.Provider value={{
