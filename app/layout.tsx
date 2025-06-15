@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Arsenal, Cormorant_Garamond } from "next/font/google";
 import Image from "next/image";
 import NavBar from "./ui/NavBar/NavBar";
 import Sidebar from "./ui/SideBar/SideBar";
@@ -13,14 +13,16 @@ import { AuthProviderWrapper } from "./context/auth.context";
 
 config.autoAddCss = false;
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const garamond = Cormorant_Garamond({
+  variable: "--main-font",
   subsets: ["latin"],
+  weight: ["400", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const arsenal = Arsenal({
+  variable: "--notes-font",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${garamond.variable} ${arsenal.variable}`}>
           <div className={styles["App"]}>
             <div className={styles["side-cont"]}>
               <NavBar />
